@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { HandPalm, Play } from '@phosphor-icons/react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as zod from 'zod'
+
 import { differenceInSeconds } from 'date-fns'
 
 import {
@@ -14,16 +12,6 @@ import {
 } from './styles'
 import { NewCycleForm } from './components/NewCycloForm'
 import { Countdown } from './components/Countdown'
-
-const newCycleFormValidationSchema = zod.object({
-  task: zod.string().min(1, 'Informe a tarefa'),
-  minutesAmount: zod
-    .number()
-    .min(1, 'Numero pode ser no mínimo 5')
-    .max(60, 'Numero pode ser no máximo 60'),
-})
-
-type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
 interface Cycle {
   id: string
@@ -37,55 +25,8 @@ interface Cycle {
 export function Home() {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
-  const [amountSecondPassed, setAmountSecondPassed] = useState(0)
-
-  const { /* register, */ handleSubmit, watch, reset } =
-    useForm<NewCycleFormData>({
-      resolver: zodResolver(newCycleFormValidationSchema),
-      defaultValues: {
-        task: '',
-        minutesAmount: 0,
-      },
-    })
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
-
-  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
-
-  useEffect(() => {
-    let interval: number
-
-    if (activeCycle) {
-      interval = setInterval(() => {
-        const secondsDiferrence = differenceInSeconds(
-          new Date(),
-          activeCycle.startDate,
-        )
-
-        if (secondsDiferrence >= totalSeconds) {
-          setCycles((state) =>
-            state.map((cycle) => {
-              if (cycle.id === activeCycle.id) {
-                return { ...cycle, fineshedDate: new Date() }
-              } else {
-                return cycle
-              }
-            }),
-          )
-
-          setAmountSecondPassed(totalSeconds)
-
-          clearInterval(interval)
-        } else {
-          setAmountSecondPassed(secondsDiferrence)
-        }
-      }, 1000)
-    }
-
-    return () => {
-      clearInterval(interval)
-    }
-  }, [activeCycle, totalSeconds])
 
   function handleCreateNewCycle(data: NewCycleFormData) {
     const id = String(new Date().getTime())
