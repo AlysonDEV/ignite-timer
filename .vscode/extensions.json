@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "miguelsolorio.symbols",
-    "esbenp.prettier-vscode",
-    "rocketseat.theme-omni",
-    "styled-components.vscode-styled-components",
-    "dbaeumer.vscode-eslint"
-  ]
-}
