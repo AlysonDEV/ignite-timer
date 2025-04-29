@@ -51,6 +51,6 @@ Por exemplo fui apreender a usar Biome para fazer a formatação do meu projeto 
 
 ## PRÓXIMO NÍVEL
 
-  - [ x ] Criação do REAMDE para apresentão do projeto estudado
-  - [ x ] Favicon com o nome da aplicação
-  - [ x ] Deploy da aplicação na vercel
+  - [x] Criação do REAMDE para apresentão do projeto estudado
+  - [x] Favicon com o nome da aplicação
+  - [x] Deploy da aplicação na vercel
