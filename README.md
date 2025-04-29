@@ -28,7 +28,7 @@ Por exemplo fui apreender a usar Biome para fazer a formatação do meu projeto 
   - Clonando o projeto: 
 
   ```bash 
-  git clone [git@github.com:AlysonDEV/ignite-timer.git](https://github.com/AlysonDEV/ignite-timer.git)
+  git clone https://github.com/AlysonDEV/ignite-timer.git
   ```
 
   - Abrir o projeto:
