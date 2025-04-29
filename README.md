@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# IGNITE TIMER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="text-align: center">
+  <img src="./.github/cover.png" width="500" />
+</div>
 
-Currently, two official plugins are available:
+A ideia do projeto é ter um timer estilo timer com descrições, auxliando estilo em 'pomodoro'.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## TECNOLOGIAS
 
-## Expanding the ESLint configuration
+ - ReactJS
+ - ViteJS
+ - Styled-Components
+ - Biome
+ - Phosphor React
+ - React Router Dom
+ - React Hook Form
+ - @hookform/resolvers
+ - Zod
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## DESAFIOS
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Resiliente seria a palavra para representar o desafio de fazer o projeto. Mesmo fazendo o que se passava na aula muitas coisa mudaram durante o período que foram gravadas as aulas e eu tive que fazer isso tentando encontrar soluções atuais. 
+Por exemplo fui apreender a usar Biome para fazer a formatação do meu projeto e ajudar em "intelisense" no vscode.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## INSTALANDO O PROJETO
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  - Clonando o projeto: 
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+  ```bash 
+  git clone git@github.com:AlysonDEV/ignite-timer.git
+  ```
+
+  - Abrir o projeto:
+
+  ```bash
+  cd ignite-timer
+  ```
+
+  -  Instalando as dependências:
+
+  ```bash
+  npm install
+  ```
+
+  - Para rodar o projeto em modo desenvolvimento:
+
+  ```bash
+  npm run dev
+  ```
+
+## PRÓXIMO NÍVEL
+
+  - [ x ] Criação do REAMDE para apresentão do projeto estudado
+  - [ x ] Favicon com o nome da aplicação
+  - [ x ] Deploy da aplicação na vercel
